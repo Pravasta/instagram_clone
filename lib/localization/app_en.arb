@@ -1,0 +1,16 @@
+{
+    "forgot_password": "Forgot password?",
+    "login": "Log in",
+    "sign_up": "Sign up.",
+    "login_by": "Log in with {by}",
+    "@login_by": {
+        "placeholders":{
+            "by":{
+                "type":"String"
+            }
+        }
+    },
+    "dont_have_account": "Don't have an account?",
+    "already_have_account": "Already have an account? ",
+    "from" : "from"
+}

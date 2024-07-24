@@ -1,0 +1,9 @@
+{
+    "forgot_password": "Lupa password?",
+    "login": "Masuk",
+    "sign_up": "Daftar",
+    "login_by": "Daftar dengan {by}",
+    "dont_have_account": "Belum memiliki akun?",
+    "already_have_account": "Sudah memiliki akun? ",
+    "from" : "dari"
+}
