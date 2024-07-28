@@ -16,13 +16,15 @@ class RegisterPage extends StatelessWidget {
             vertical: 15,
             horizontal: 10,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(child: HeaderRegisterSection()),
-              Flexible(child: FieldRegisterSection()),
-              Flexible(child: BottomRegisterSection()),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                HeaderRegisterSection(),
+                FieldRegisterSection(),
+                BottomRegisterSection(),
+              ],
+            ),
           ),
         ),
       ),

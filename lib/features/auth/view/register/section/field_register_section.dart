@@ -7,6 +7,9 @@ import 'package:instagram_clone/core/core.dart';
 import 'package:instagram_clone/features/auth/bloc/auth_bloc/auth_bloc.dart';
 import 'package:instagram_clone/widgets/message/scaffold_message.dart';
 
+import '../../../../../constant/app_colors.dart';
+import '../../../../../constant/app_text.dart';
+import '../../../../../constant/url_assets.dart';
 import '../../../../../widgets/button/default_button.dart';
 import '../../../../../widgets/field/default_field.dart';
 
@@ -33,10 +36,15 @@ class _FieldRegisterSectionState extends State<FieldRegisterSection> {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Form(
       key: _key,
       child: Column(
         children: [
+          Image.asset(
+            UrlAssets.imageInstagramText,
+            scale: 8,
+          ),
           DefaultField(
             hintText: 'Name',
             controller: nameC,
@@ -93,7 +101,9 @@ class _FieldRegisterSectionState extends State<FieldRegisterSection> {
                 onTap: () {
                   if (!_key.currentState!.validate()) {
                     return;
-                  } else if (emailC.text.isNotEmpty && passC.text.isNotEmpty) {
+                  } else if (nameC.text.isNotEmpty &&
+                      emailC.text.isNotEmpty &&
+                      passC.text.isNotEmpty) {
                     final bloc = context.read<AuthBloc>();
                     bloc.add(OnAuthRegister(
                       name: nameC.text.trim(),
@@ -105,6 +115,30 @@ class _FieldRegisterSectionState extends State<FieldRegisterSection> {
                 height: 50,
               );
             },
+          ),
+          Column(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text(text!.login_by('Google'),
+                    style: AppText.text14.copyWith(color: AppColors.blueDark)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('${text.already_have_account} ',
+                      style: AppText.text14
+                          .copyWith(color: AppColors.greyDarkColor)),
+                  GestureDetector(
+                    onTap: () => Navigation.pushName(RoutesName.login),
+                    child: Text(
+                      text.login,
+                      style: AppText.text14.copyWith(color: AppColors.blueDark),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),

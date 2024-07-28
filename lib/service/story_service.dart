@@ -26,9 +26,7 @@ class StoryService {
     int? location,
   ]) async {
     final url = _appEndpoint.getAllStories(location, size, page);
-    // final url = Uri.parse(
-    //   'https://story-api.dicoding.dev/v1/stories?location=0&size=$size&page=$page',
-    // );
+
     final headers = {
       'Authorization': 'Bearer $token',
     };
@@ -41,7 +39,7 @@ class StoryService {
       } else {
         throw ApiErrorHandler.handleError(
           statusCode: response.statusCode,
-          error: response.body,
+          error: data.message,
         );
       }
     } on SocketException catch (e) {

@@ -5,7 +5,7 @@ import '../../../../../constant/app_text.dart';
 import '../../../../../constant/url_assets.dart';
 import '../../../../../controller/localizations/localization_bloc.dart';
 import '../../../../../core/core.dart';
-import '../../../model/test.dart';
+import '../../../model/localization.dart';
 
 class HeaderRegisterSection extends StatelessWidget {
   const HeaderRegisterSection({super.key});
@@ -35,10 +35,7 @@ class HeaderRegisterSection extends StatelessWidget {
                       );
                 },
               )),
-              Image.asset(
-                UrlAssets.imageInstagramText,
-                scale: 8,
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 1 / 10),
             ],
           ),
         );

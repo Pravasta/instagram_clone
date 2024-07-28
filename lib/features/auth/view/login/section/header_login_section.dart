@@ -4,7 +4,7 @@ import 'package:instagram_clone/constant/app_text.dart';
 import 'package:instagram_clone/constant/url_assets.dart';
 import 'package:instagram_clone/controller/localizations/localization_bloc.dart';
 import 'package:instagram_clone/core/core.dart';
-import 'package:instagram_clone/features/auth/model/test.dart';
+import 'package:instagram_clone/features/auth/model/localization.dart';
 
 class HeaderLoginSection extends StatelessWidget {
   const HeaderLoginSection({super.key});
@@ -16,7 +16,6 @@ class HeaderLoginSection extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(bottom: 30.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DropdownButtonHideUnderline(
                   child: DropdownButton(
@@ -34,10 +33,7 @@ class HeaderLoginSection extends StatelessWidget {
                       );
                 },
               )),
-              Image.asset(
-                UrlAssets.imageInstagramText,
-                scale: 8,
-              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 1 / 8),
             ],
           ),
         );

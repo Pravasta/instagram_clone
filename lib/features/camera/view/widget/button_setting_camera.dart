@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/widgets/message/scaffold_message.dart';
 
 import '../../../../common/routes/navigation.dart';
 
@@ -21,11 +22,13 @@ class ButtonSettingCamera extends StatelessWidget {
             icon: const Icon(Icons.cancel, size: 30),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () =>
+                showMessage(context, 'This features it\'s comming soon'),
             icon: const Icon(Icons.flash_off, size: 30),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () =>
+                showMessage(context, 'This features it\'s comming soon'),
             icon: const Icon(Icons.settings, size: 30),
           ),
         ],

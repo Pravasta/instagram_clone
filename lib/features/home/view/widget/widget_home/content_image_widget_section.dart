@@ -9,6 +9,8 @@ import 'package:instagram_clone/features/home/model/story_model.dart';
 import 'package:instagram_clone/widgets/button/default_button.dart';
 import 'package:instagram_clone/widgets/message/bottom_sheet.dart';
 
+import '../../../../../core/core.dart';
+
 class ContentImageWidgetSection extends StatelessWidget {
   const ContentImageWidgetSection({super.key, required this.story});
 
@@ -16,6 +18,7 @@ class ContentImageWidgetSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Column(
       children: [
         Container(
@@ -92,7 +95,7 @@ class ContentImageWidgetSection extends StatelessWidget {
                                 const SizedBox(width: 20),
                                 Expanded(
                                   child: DefaultButton(
-                                    title: 'Open in maps',
+                                    title: text!.see_maps,
                                     onTap: () {
                                       Navigation.pushName(
                                         RoutesName.mapsPage,

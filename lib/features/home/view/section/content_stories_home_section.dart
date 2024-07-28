@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram_clone/common/routes/navigation.dart';
 import 'package:instagram_clone/common/routes/routes_name.dart';
 import 'package:instagram_clone/constant/app_text.dart';
+import 'package:instagram_clone/features/auth/bloc/user/user_bloc.dart';
 import '../../../../widgets/avatar/default_avatar_widget.dart';
 import '../../model/story_model.dart';
 
@@ -29,7 +31,7 @@ class ContentStoriesHomeSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Pravasta',
+                      context.read<UserBloc>().state.user?.name ?? '',
                       style:
                           AppText.text12.copyWith(fontWeight: FontWeight.w700),
                     ),

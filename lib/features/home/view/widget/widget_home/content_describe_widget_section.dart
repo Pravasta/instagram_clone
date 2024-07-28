@@ -6,6 +6,8 @@ import 'package:instagram_clone/features/home/model/story_model.dart';
 import 'package:instagram_clone/utils/datetime/convert_to_hours.dart';
 import 'package:instagram_clone/widgets/avatar/default_avatar_widget.dart';
 
+import '../../../../../core/core.dart';
+
 class ContentDescribeWidgetSection extends StatelessWidget {
   const ContentDescribeWidgetSection({super.key, required this.story});
 
@@ -13,6 +15,8 @@ class ContentDescribeWidgetSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SizedBox(
@@ -22,7 +26,7 @@ class ContentDescribeWidgetSection extends StatelessWidget {
           children: [
             // LIKES
             Text(
-              '86.032 likes',
+              '86.032 ${text!.likes}',
               style: AppText.text12.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -52,7 +56,7 @@ class ContentDescribeWidgetSection extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          hintText: 'Add a comment...',
+                          hintText: text.add_comment,
                           hintStyle: AppText.text12
                               .copyWith(color: AppColors.greyColor),
                           border: InputBorder.none,
@@ -64,7 +68,7 @@ class ContentDescribeWidgetSection extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                        '${convertToHours(story.createdAt.toIso8601String())} hours ago',
+                        '${convertToHours(story.createdAt.toIso8601String())} ${text.hours_ago}',
                         style: AppText.text10
                             .copyWith(color: AppColors.greyColor)),
                     const SizedBox(width: 10),

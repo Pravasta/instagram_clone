@@ -6,7 +6,7 @@ class RealsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('RealsPage'),
+      child: Text('This Features it\'s comming soon'),
     );
   }
 }

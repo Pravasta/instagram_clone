@@ -5,5 +5,16 @@
     "login_by": "Daftar dengan {by}",
     "dont_have_account": "Belum memiliki akun?",
     "already_have_account": "Sudah memiliki akun? ",
-    "from" : "dari"
+    "from" : "dari",
+    "edit_profile": "Atur Profil",
+    "share_profile": "Bagikan",
+    "post": "postingan",
+    "followers": "pengikut",
+    "following": "diikuti",
+    "likes": "suka",
+    "hours_ago": "jam lalu",
+    "add_comment": "Berikan komentar",
+    "see_maps" : "Lihat Lokasi",
+    "add_description": "Tambahkan Deskripsi",
+    "select_location" : "Pilih Lokasi"
 }

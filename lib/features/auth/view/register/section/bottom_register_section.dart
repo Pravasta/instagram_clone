@@ -17,35 +17,12 @@ class BottomRegisterSection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
-          children: [
-            TextButton(
-              onPressed: () {},
-              child: Text(text!.login_by('Google'),
-                  style: AppText.text14.copyWith(color: AppColors.blueDark)),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('${text.already_have_account} ',
-                    style: AppText.text14
-                        .copyWith(color: AppColors.greyDarkColor)),
-                GestureDetector(
-                  onTap: () => Navigation.pushName(RoutesName.login),
-                  child: Text(
-                    text.login,
-                    style: AppText.text14.copyWith(color: AppColors.blueDark),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+        SizedBox(height: MediaQuery.of(context).size.height * 1 / 4),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Instagram ${text.from}',
+              'Instagram ${text!.from}',
               style: AppText.text14.copyWith(color: AppColors.greyDarkColor),
             ),
             Image.asset(

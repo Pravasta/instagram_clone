@@ -11,6 +11,8 @@ import 'package:instagram_clone/widgets/button/default_button.dart';
 import 'package:instagram_clone/widgets/field/default_field.dart';
 import 'package:instagram_clone/widgets/message/scaffold_message.dart';
 
+import '../../../../../constant/url_assets.dart';
+
 class FieldLoginSection extends StatefulWidget {
   const FieldLoginSection({super.key});
 
@@ -32,9 +34,15 @@ class _FieldLoginSectionState extends State<FieldLoginSection> {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Form(
-        key: _key,
-        child: Column(children: [
+      key: _key,
+      child: Column(
+        children: [
+          Image.asset(
+            UrlAssets.imageInstagramText,
+            scale: 8,
+          ),
           DefaultField(
               hintText: 'Username/Email',
               controller: emailC,
@@ -62,39 +70,66 @@ class _FieldLoginSectionState extends State<FieldLoginSection> {
                     style: AppText.text12.copyWith(color: AppColors.blueDark))),
           ),
           const SizedBox(height: 15),
-          BlocConsumer<AuthBloc, AuthState>(listener: (context, state) {
-            if (state.status == AuthStatusState.failed) {
-              showMessage(context, state.message);
-            }
-            if (state.status == AuthStatusState.success) {
-              showMessage(context, state.message);
-              print(state.result!.name);
-              print(state.result!.token);
-              print(state.result!.userId);
-              Navigation.pushNamedAndRemoveUntil(RoutesName.mainNavigation);
-            }
-          }, builder: (context, state) {
-            if (state.status == AuthStatusState.loading) {
-              return const Center(
-                child: CircularProgressIndicator.adaptive(),
-              );
-            }
+          BlocConsumer<AuthBloc, AuthState>(
+            listener: (context, state) {
+              if (state.status == AuthStatusState.failed) {
+                showMessage(context, state.message);
+              }
+              if (state.status == AuthStatusState.success) {
+                showMessage(context, state.message);
+                Navigation.pushNamedAndRemoveUntil(RoutesName.mainNavigation);
+              }
+            },
+            builder: (context, state) {
+              if (state.status == AuthStatusState.loading) {
+                return const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                );
+              }
 
-            return DefaultButton(
-                title: AppLocalizations.of(context)!.login,
-                onTap: () {
-                  if (!_key.currentState!.validate()) {
-                    return;
-                  } else if (emailC.text.isNotEmpty && passC.text.isNotEmpty) {
-                    final bloc = context.read<AuthBloc>();
-                    bloc.add(OnAuthLogin(
-                      email: emailC.text.trim(),
-                      password: passC.text.trim(),
-                    ));
-                  }
-                },
-                height: 50);
-          })
-        ]));
+              return DefaultButton(
+                  title: AppLocalizations.of(context)!.login,
+                  onTap: () {
+                    if (!_key.currentState!.validate()) {
+                      return;
+                    } else if (emailC.text.isNotEmpty &&
+                        passC.text.isNotEmpty) {
+                      final bloc = context.read<AuthBloc>();
+                      bloc.add(OnAuthLogin(
+                        email: emailC.text.trim(),
+                        password: passC.text.trim(),
+                      ));
+                    }
+                  },
+                  height: 50);
+            },
+          ),
+          Column(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text(text!.login_by('Google'),
+                    style: AppText.text14.copyWith(color: AppColors.blueDark)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('${text.dont_have_account} ',
+                      style: AppText.text14
+                          .copyWith(color: AppColors.greyDarkColor)),
+                  GestureDetector(
+                    onTap: () => Navigation.pushName(RoutesName.register),
+                    child: Text(
+                      '${text.sign_up}.',
+                      style: AppText.text14.copyWith(color: AppColors.blueDark),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }

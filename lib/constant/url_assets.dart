@@ -12,6 +12,9 @@ class UrlAssets {
   static String iconSearch = '$_baseAssetsUrl/icon/icons_search.png';
   static String iconShare = '$_baseAssetsUrl/icon/icons_share.png';
   static String iconMenu = '$_baseAssetsUrl/icon/icons_menu.png';
+  static String iconGrid = '$_baseAssetsUrl/icon/icons_grid.png';
+  static String iconTag = '$_baseAssetsUrl/icon/icons_tag.png';
+  static String iconPost = '$_baseAssetsUrl/icon/icons_post.png';
 
   // Images
   static String imageInstagram = '$_baseAssetsUrl/image/instagram_logo.png';

@@ -15,13 +15,15 @@ class LoginPage extends StatelessWidget {
             vertical: 15,
             horizontal: 10,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(child: HeaderLoginSection()),
-              Flexible(child: FieldLoginSection()),
-              Flexible(child: BottomLoginSection()),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                HeaderLoginSection(),
+                FieldLoginSection(),
+                BottomLoginSection(),
+              ],
+            ),
           ),
         ),
       ),

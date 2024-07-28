@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/widgets/message/scaffold_message.dart';
 
 import '../../../../constant/url_assets.dart';
 
@@ -25,11 +26,15 @@ class AppBarSection extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      showMessage(context, 'The features it\'s comming soon');
+                    },
                     child: Image.asset(UrlAssets.iconFavorite, scale: 4)),
                 const SizedBox(width: 20),
                 GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      showMessage(context, 'The features it\'s comming soon');
+                    },
                     child: Image.asset(UrlAssets.iconMessage, scale: 4)),
               ],
             ),

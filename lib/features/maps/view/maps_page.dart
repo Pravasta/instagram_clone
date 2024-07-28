@@ -5,6 +5,7 @@ import 'package:instagram_clone/constant/app_colors.dart';
 import 'package:instagram_clone/constant/app_text.dart';
 import 'package:instagram_clone/features/maps/cubit/maps_cubit.dart';
 
+import '../../../core/core.dart';
 import 'section/info_maps_section.dart';
 
 class MapsPage extends StatefulWidget {
@@ -29,11 +30,12 @@ class _MapsPageState extends State<MapsPage> {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<MapsCubit>();
+    final text = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'See Maps',
+          text!.see_maps,
           style: AppText.text16.copyWith(
             fontWeight: FontWeight.bold,
           ),

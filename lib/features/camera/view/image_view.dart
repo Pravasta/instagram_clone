@@ -10,6 +10,7 @@ import 'package:instagram_clone/features/camera/view/widget/button_setting_image
 import 'package:instagram_clone/widgets/field/default_field.dart';
 import 'package:instagram_clone/widgets/message/scaffold_message.dart';
 
+import '../../../core/core.dart';
 import '../../home/bloc/home_bloc.dart';
 import '../bloc/camera/camera_bloc.dart';
 
@@ -40,6 +41,8 @@ class _ImageViewState extends State<ImageView> {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
+
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
@@ -75,7 +78,7 @@ class _ImageViewState extends State<ImageView> {
                   children: [
                     Expanded(
                       child: DefaultField(
-                        hintText: 'Add Description',
+                        hintText: text!.add_description,
                         controller: descriptionC,
                       ),
                     ),

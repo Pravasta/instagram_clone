@@ -12,5 +12,16 @@
     },
     "dont_have_account": "Don't have an account?",
     "already_have_account": "Already have an account? ",
-    "from" : "from"
+    "from" : "from",
+    "edit_profile": "Edit Profile",
+    "share_profile": "Share Profile",
+    "post": "posts",
+    "followers": "followers",
+    "following": "following",
+    "likes": "likes",
+    "hours_ago": "hours ago",
+    "add_comment": "Add a comment",
+    "see_maps" : "See Location",
+    "add_description": "Add Description",
+    "select_location" : "Select Location"
 }

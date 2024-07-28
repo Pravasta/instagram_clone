@@ -14,6 +14,7 @@ class AuthenticatedBloc extends Bloc<AuthenticatedEvent, AuthenticatedState> {
     on<AuthenticatedEvent>((event, emit) {});
     on<UnAuthenticated>((event, emit) async {
       await _helper.deleteToken('isAuth');
+      await _helper.deleteToken('isToken');
       emit(state.copyWith(
         status: AuthenticatedStatusState.initial,
         message: 'Logout succes',
