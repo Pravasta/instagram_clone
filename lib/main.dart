@@ -8,6 +8,7 @@ import 'package:instagram_clone/common/routes/routes_name.dart';
 import 'package:instagram_clone/constant/app_theme.dart';
 import 'package:instagram_clone/controller/localizations/localization_bloc.dart';
 import 'package:instagram_clone/core/core.dart';
+import 'package:instagram_clone/features/splash_screen/view/splash_page.dart';
 
 void main() {
   runApp(const MyApp());

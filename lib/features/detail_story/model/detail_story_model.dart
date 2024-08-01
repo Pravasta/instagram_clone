@@ -41,8 +41,8 @@ class Story {
   String description;
   String photoUrl;
   DateTime createdAt;
-  double lat;
-  double lon;
+  double? lat;
+  double? lon;
 
   Story({
     required this.id,
